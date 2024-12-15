@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 
 public class AddHotel extends JFrame implements ActionListener {
     JButton add, back;
-    JTextField tfhotelname, tfcostperson, tfac, tffood;
+    JTextField tfhotelname, tfcostperson, tfac, tffood, tflocation;
     AddHotel(){
         //create frame
-        setBounds(550,250,850,300);
+        setBounds(550,300,850,350);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
@@ -48,14 +48,21 @@ public class AddHotel extends JFrame implements ActionListener {
         lblfood.setBounds(30,170,150,25);
         add(lblfood);
 
-        //name
         tffood = new JTextField();
         tffood.setBounds(220,170,150,25);
         add(tffood);
 
+        JLabel lbllocation = new JLabel("Location");
+        lbllocation.setBounds(30,210,150,25);
+        add(lbllocation);
+
+        tflocation= new JTextField();
+        tflocation.setBounds(220,210,150,25);
+        add(tflocation);
+
         //add
         add=new JButton("Add");
-        add.setBounds(70,220,100,25);
+        add.setBounds(70,250,100,25);
         add.setForeground(Color.WHITE);
         add.setBackground(Color.BLACK);
         add.addActionListener(this);
@@ -64,7 +71,7 @@ public class AddHotel extends JFrame implements ActionListener {
 
         //back
         back=new JButton("Back");
-        back.setBounds(220,220,100,25);
+        back.setBounds(220,250,100,25);
         back.setForeground(Color.WHITE);
         back.setBackground(Color.BLACK);
         back.addActionListener(this);
@@ -87,9 +94,10 @@ public class AddHotel extends JFrame implements ActionListener {
             String costperperson = tfcostperson.getText();
             String ac = tfac.getText();
             String food = tffood.getText();
+            String location = tflocation.getText();
             try{
                 Conn c = new Conn();
-                String query = "insert into hotel values('"+hotelname+"', '"+costperperson+"', '"+ac+"', '"+food+"')";
+                String query = "insert into hotel values('"+hotelname+"', '"+costperperson+"', '"+ac+"', '"+food+"', '"+location+"')";
                 c.s.executeUpdate(query);
 
                 JOptionPane.showMessageDialog(null, "Hotel Details Added Successfully");

@@ -17,7 +17,7 @@ public class UpdateAdmin extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        JLabel text = new JLabel("UPDATE CUSTOMER DETAILS");
+        JLabel text = new JLabel("UPDATE ADMIN DETAILS");
         text.setBounds(50,0,300,25);
         text.setFont(new Font("Tahoma", Font.BOLD,20));
         add(text);

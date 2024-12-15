@@ -77,6 +77,7 @@ public class Dashboard extends JFrame implements ActionListener {
         deletePersonalDetails.setFont(new Font("Tahoma", Font.PLAIN,20));
         deletePersonalDetails.setMargin(new Insets(0,0,0,30));
         deletePersonalDetails.setFocusable(false);
+        deletePersonalDetails.addActionListener(this);
         p2.add(deletePersonalDetails);
 
         checkpackages = new JButton("Check Package");

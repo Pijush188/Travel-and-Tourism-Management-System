@@ -10,7 +10,7 @@ public class ViewAdmin extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        JLabel text = new JLabel("View Admin Details");
+        JLabel text = new JLabel("VIEW ADMIN DETAILS");
         text.setBounds(50,5,300,25);
         text.setFont(new Font("Tahoma", Font.BOLD,20));
         add(text);

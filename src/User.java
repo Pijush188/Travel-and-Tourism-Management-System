@@ -13,10 +13,10 @@ public class User extends JFrame implements ActionListener{
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
         // Load images
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/user.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/user-login.png"));
         Image i2= i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
         userIcon=new ImageIcon(i2);
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/admin.jpg"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/admin-login.png"));
         Image i5= i4.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
         adminIcon=new ImageIcon(i5);
 
@@ -36,7 +36,7 @@ public class User extends JFrame implements ActionListener{
         ruser.setIcon(userIcon); // Set the icon
         add(ruser);
         JLabel t1=new JLabel("USER");
-        t1.setBounds(240,250,200,20);
+        t1.setBounds(230,250,200,20);
         add(t1);
         radmin = new JRadioButton();
         radmin.setBounds(550, 150, 200, 100);

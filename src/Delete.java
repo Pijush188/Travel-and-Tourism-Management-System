@@ -103,7 +103,7 @@ public class Delete extends JFrame implements ActionListener {
         Image i2 = i1.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel image = new JLabel(i3);
-        image.setBounds(620,80,200,200);
+        image.setBounds(620,30,200,200);
         add(image);
 
         try{
@@ -141,7 +141,8 @@ public class Delete extends JFrame implements ActionListener {
                 c.s.executeUpdate("delete from bookpackage where username='"+this.username+"'");
                 c.s.executeUpdate("delete from bookhotel where username='"+this.username+"'");
                 JOptionPane.showMessageDialog(null,"Data Deleted Successfully");
-                System.exit(0);
+                setVisible(false);
+                new User();
             } catch (Exception e) {
                 e.printStackTrace();
             }

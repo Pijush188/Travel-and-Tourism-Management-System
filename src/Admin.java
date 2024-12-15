@@ -86,7 +86,7 @@ public class Admin extends JFrame implements ActionListener {
                 else {
                     JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
                     setVisible(false);
-                    new Login();
+                    new User();
                 }
             } catch (Exception e) {
                 e.printStackTrace();

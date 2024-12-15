@@ -9,7 +9,7 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
     ViewBookedHotel(String username)
     {
 
-        setBounds(550,250,850,600);
+        setBounds(550,250,850,650);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
         //heading
@@ -94,12 +94,19 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
         JLabel labelbookingId=new JLabel();
         labelbookingId.setBounds(220,460,150,25);
         add(labelbookingId);
+        //location
+        JLabel lblloc=new JLabel("Location");
+        lblloc.setBounds(30,500,150,25);
+        add(lblloc);
+        JLabel labelloc=new JLabel();
+        labelloc.setBounds(220,500,150,25);
+        add(labelloc);
 
         //back
         back=new JButton("Back");
         back.setForeground(Color.WHITE);
         back.setBackground(Color.BLACK);
-        back.setBounds(130,500,100,30);
+        back.setBounds(130,550,100,30);
         back.setFocusable(false);
         back.addActionListener(this);
         add(back);
@@ -129,6 +136,7 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
                 labelphone.setText(rs.getString("phone"));
                 labelprice.setText(rs.getString("price"));
                 labelbookingId.setText(rs.getString("bookingId"));
+                labelloc.setText(rs.getString("location"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -141,6 +149,6 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
 
     }
     public static void main(String[] args){
-        new ViewBookedHotel("");
+        new ViewBookedHotel("Pijush");
     }
 }

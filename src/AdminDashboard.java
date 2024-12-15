@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.io.IOException;
 
 public class AdminDashboard extends JFrame implements ActionListener {
-    JButton addHotel,updateAdminDetails,viewAdminDetails;
+    JButton addHotel,updateHotel, deleteHotel,updateAdminDetails,viewAdminDetails;
     int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
     int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
     String username;
@@ -50,8 +50,28 @@ public class AdminDashboard extends JFrame implements ActionListener {
         addHotel.addActionListener(this);
         p2.add(addHotel);
 
+        updateHotel = new JButton("Update Hotels");
+        updateHotel.setBounds(0,50,300,50);
+        updateHotel.setBackground(new Color(0,0,102));
+        updateHotel.setForeground(Color.WHITE);
+        updateHotel.setFont(new Font("Tahoma", Font.PLAIN,20));
+        updateHotel.setMargin(new Insets(0,0,0,100));
+        updateHotel.setFocusable(false);
+        updateHotel.addActionListener(this);
+        p2.add(updateHotel);
+
+        deleteHotel = new JButton("Delete Hotels");
+        deleteHotel.setBounds(0,100,300,50);
+        deleteHotel.setBackground(new Color(0,0,102));
+        deleteHotel.setForeground(Color.WHITE);
+        deleteHotel.setFont(new Font("Tahoma", Font.PLAIN,20));
+        deleteHotel.setMargin(new Insets(0,0,0,100));
+        deleteHotel.setFocusable(false);
+        deleteHotel.addActionListener(this);
+        p2.add(deleteHotel);
+
         updateAdminDetails = new JButton("Update Admin Details");
-        updateAdminDetails.setBounds(0,50,300,50);
+        updateAdminDetails.setBounds(0,150,300,50);
         updateAdminDetails.setBackground(new Color(0,0,102));
         updateAdminDetails.setForeground(Color.WHITE);
         updateAdminDetails.setFont(new Font("Tahoma", Font.PLAIN,20));
@@ -61,7 +81,7 @@ public class AdminDashboard extends JFrame implements ActionListener {
         p2.add(updateAdminDetails);
 
         viewAdminDetails = new JButton("View Admin Details");
-        viewAdminDetails.setBounds(0,100,300,50);
+        viewAdminDetails.setBounds(0,200,300,50);
         viewAdminDetails.setBackground(new Color(0,0,102));
         viewAdminDetails.setForeground(Color.WHITE);
         viewAdminDetails.setFont(new Font("Tahoma", Font.PLAIN,20));
@@ -89,6 +109,12 @@ public class AdminDashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == addHotel){
             new AddHotel();
+        }
+        else if(ae.getSource() == updateHotel){
+            new UpdateHotel();
+        }
+        else if(ae.getSource() == deleteHotel){
+            new deleteHotel();
         }
         else if(ae.getSource() == viewAdminDetails){
             new ViewAdmin(username);
